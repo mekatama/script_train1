@@ -65,22 +65,22 @@ if(toTipIndex > 5){
 			if(stageType == 0){
 				GameObject stageObject = GenerateStage(i);	//関数へ
 				generatedStageList.Add(stageObject);		//管理用Listにパーツ追加
-				Debug.Log("地面パーツ");
+//				Debug.Log("地面パーツ");
 			}
 			if(stageType == 1){
 				GameObject stageObject = GenerateStageUp(i);	//関数へ
 				generatedStageList.Add(stageObject);		//管理用Listにパーツ追加
-				Debug.Log("上り坂パーツ");
+//				Debug.Log("上り坂パーツ");
 			}
 			if(stageType == 2){
 				GameObject stageObject = GenerateStageHigh(i);	//関数へ
 				generatedStageList.Add(stageObject);		//管理用Listにパーツ追加
-				Debug.Log("高架パーツ");
+//				Debug.Log("高架パーツ");
 			}
 			if(stageType == 3){
 				GameObject stageObject = GenerateStageDown(i);	//関数へ
 				generatedStageList.Add(stageObject);		//管理用Listにパーツ追加
-				Debug.Log("下り坂パーツ");
+//				Debug.Log("下り坂パーツ");
 			}
 		}
 
