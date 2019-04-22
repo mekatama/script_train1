@@ -78,4 +78,10 @@ public class GameController : MonoBehaviour {
 		//SEをその場で鳴らす
 //		AudioSource.PlayClipAtPoint( audioClipPowerup, transform.position);	//SE再生(Destroy対策用)
 	}
+
+	//return用の制御関数
+	public void ButtonClicked_Return(){
+		SceneManager.LoadScene("title");	//シーンのロード
+	}
+
 }
