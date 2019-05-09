@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 	public int speedType;		//speed制御
+	public int count;			//light変化用count
+	public GameObject Light0;	//light0
+	public GameObject Light1;	//light1
+	private int isLight;		//0:全点灯,1:ひとつ消灯,2:ふたつ消灯
 
 	//ゲームステート
 	enum State{
@@ -16,6 +20,7 @@ public class GameController : MonoBehaviour {
 	State state;
 
 	void Start () {
+		isLight = 0;	//初期化
 		GameStart();	//初期ステート		
 	}
 
@@ -42,7 +47,28 @@ public class GameController : MonoBehaviour {
 	}
 
 	void Update () {
-		
+		count += 1;
+		//Lights制御
+		if(count % 50 == 0){
+			switch(isLight){
+				case 0:
+					isLight = 1;
+					Light0.SetActive(false);	//light0 off
+					Debug.Log("yuugata");
+					break;
+				case 1:
+					isLight = 2;
+					Light1.SetActive(false);	//light1 off
+					Debug.Log("yoru");
+					break;
+				case 2:
+					isLight = 0;
+					Light0.SetActive(true);		//light0 on
+					Light1.SetActive(true);		//light1 on
+					Debug.Log("hiru");
+					break;
+			}
+		}
 	}
 
 	void GameStart(){
@@ -83,5 +109,4 @@ public class GameController : MonoBehaviour {
 	public void ButtonClicked_Return(){
 		SceneManager.LoadScene("title");	//シーンのロード
 	}
-
 }
