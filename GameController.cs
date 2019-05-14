@@ -54,18 +54,18 @@ public class GameController : MonoBehaviour {
 				case 0:
 					isLight = 1;
 					Light0.SetActive(false);	//light0 off
-					Debug.Log("yuugata");
+//					Debug.Log("yuugata");
 					break;
 				case 1:
 					isLight = 2;
 					Light1.SetActive(false);	//light1 off
-					Debug.Log("yoru");
+//					Debug.Log("yoru");
 					break;
 				case 2:
 					isLight = 0;
 					Light0.SetActive(true);		//light0 on
 					Light1.SetActive(true);		//light1 on
-					Debug.Log("hiru");
+//					Debug.Log("hiru");
 					break;
 			}
 		}
