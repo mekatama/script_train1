@@ -6,10 +6,11 @@ using UnityEngine;
 //もしくはcameraをpublic経由でアサインする
 public class Tap : MonoBehaviour {
 	GameObject structure;			//tapしたオブジェクト入れる用
-	private bool isTap = false;	//一回だけ処理
+	private bool isTap = false;		//一回だけ処理
+	public AudioClip audioClipTap;	//tap SE
 
 	void Update () {
-		Debug.Log("isTap" + isTap);
+//		Debug.Log("isTap" + isTap);
 		structure = null;
 
 		//タップした判定
@@ -29,6 +30,8 @@ public class Tap : MonoBehaviour {
 					//ちょっとだけ拡大させる
 					transform.localScale = new Vector3(1.4f, 1.4f, 1.4f);
 					isTap = true;
+					//SEをその場で鳴らす
+					AudioSource.PlayClipAtPoint( audioClipTap, transform.position);
 					//0.1秒後に呼び出す
 					Invoke("ScaleReset", 0.1f);
 				}
